@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>고교학점제 네비게이션 - 맞춤형 성향 & 진로 설계</title>
+  <meta name="description" content="우리 아이의 MBTI와 성향 분석을 토대로 고교학점제 최적의 선택과목 로드맵과 미래 유망 직업 리포트를 받아보세요.">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="index.css">
+  <!-- Fonts & FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Premium Simulated Smartphone Shell Frame -->
+  <div class="phone-shell">
+    
+    <!-- Phone Status Header -->
+    <div class="phone-header">
+      <div class="time">15:40</div>
+      <div class="phone-notch"></div>
+      <div class="icons">
+        <i class="fas fa-signal"></i>
+        <i class="fas fa-wifi"></i>
+        <i class="fas fa-battery-full"></i>
+      </div>
+    </div>
+
+    <!-- App Main Dynamic Screens Area -->
+    <div class="screen-container">
+      
+      <!-- SCREEN 1: HOME & MBTI INPUT -->
+      <div id="home-screen" class="screen active">
+        <div class="logo-area">
+          <div class="logo-icon">
+            <i class="fa-solid fa-compass-drafting"></i>
+          </div>
+          <h1 id="home-main-title" class="app-title">고교학점제 네비게이션</h1>
+          <p id="home-sub-title" class="sub-message">
+            우리 아이의 타고난 성향(MBTI/사주)을 분석하여, AI 시대에 살아남을 유망 직업과 고교학점제 맞춤형 선택과목 로드맵을 찍어드립니다.
+          </p>
+        </div>
+
+        <div class="input-group">
+          <label id="input-lbl" for="mbti-input" class="input-label">
+            자녀의 MBTI 4자리를 입력해 주세요 (예: INFP, ESTJ)
+          </label>
+          <input 
+            type="text" 
+            id="mbti-input" 
+            class="mbti-input" 
+            placeholder="대문자로 입력하세요 (예: INFP)" 
+            maxlength="4"
+            autocomplete="off"
+          >
+        </div>
+
+        <button id="analyze-btn" class="btn-primary" type="button">
+          <span>무료 성향 및 미래 직업 분석하기</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+
+        <!-- Simulated Sheets Settings panel -->
+        <div class="settings-toggle">
+          <button id="settings-btn" class="settings-btn" type="button">
+            <i class="fa-solid fa-gears"></i> 구글 시트 연동 설정 (테스트용)
+          </button>
+          <div id="settings-panel" class="settings-panel">
+            <div class="settings-title">Spreadsheet Connector</div>
+            <input 
+              type="text" 
+              id="google-sheet-url" 
+              class="settings-input" 
+              placeholder="구글 시트 공유 URL 입력 (Tendency_Match 탭 등)"
+            >
+            <p style="font-size: 0.72rem; color: var(--text-muted);">* 입력 시 해당 구글 시트의 설정된 셀 데이터를 가상 동기화합니다.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SCREEN 2: TENDENCY MATCH (FREE RESULTS AREA) -->
+      <div id="result-screen" class="screen">
+        <div class="screen-title-area">
+          <button id="back-to-home" class="back-btn" aria-label="이전 화면으로"><i class="fa-solid fa-chevron-left"></i></button>
+          <div id="res-screen-title" class="screen-title">🔍 우리 아이 성향 분석 결과</div>
+        </div>
+
+        <div class="glass-card highlight">
+          <div class="card-title">
+            <i class="fa-solid fa-sparkles"></i> <span id="res-mbti-badge">INFP</span> 성향 분석 리포트
+          </div>
+          <div id="res-analysis-text" class="card-content">
+            아이는 따뜻한 공감 능력과 깊은 통찰력을 가졌으며, 사주학적으로 木(목)의 기운이 강해 무언가를 창조하고 기르는 데 소질이 있습니다. 압박감을 주면 튕겨 나가는 성향이므로, 주도성을 쥐여주는 학습 방식이 효과적입니다.
+          </div>
+        </div>
+
+        <div class="glass-card">
+          <div id="res-jobs-title" class="card-title">
+            💡 AI 시대 추천 직업:
+          </div>
+          <div id="res-jobs-container" class="badge-container">
+            <!-- Dynamic Job Badges will appear here -->
+            <span class="job-badge">AI 윤리학자</span>
+            <span class="job-badge">메타버스 콘텐츠 크리에이터</span>
+            <span class="job-badge">스마트 헬스케어 카운슬러</span>
+          </div>
+        </div>
+
+        <!-- Premium Conversion Button / Banner Card -->
+        <button id="premium-pay-btn" class="premium-banner" type="button">
+          <div class="banner-header">
+            <i class="fa-solid fa-lock"></i>
+            <span>유료 프리미엄 멤버십 오픈</span>
+          </div>
+          <div class="banner-desc">
+            🔒 [유료] 우리 아이 성향에 맞는 대학별 '필수 선택과목' 및 이번 달 비교과 로드맵 보러가기 (월 9,900원)
+          </div>
+        </button>
+      </div>
+
+      <!-- SCREEN 3: CURATION STRATEGY REPORT (PREMIUM AREA) -->
+      <div id="membership-screen" class="screen">
+        <div class="screen-title-area">
+          <button id="back-to-result" class="back-btn" aria-label="이전 화면으로"><i class="fa-solid fa-chevron-left"></i></button>
+          <div id="cur-screen-title" class="screen-title">🎯 고교학점제 매월 맞춤형 전략 리포트</div>
+        </div>
+
+        <div class="glass-card highlight">
+          <div class="card-title">
+            <i class="fa-solid fa-graduation-cap"></i> <span id="cur-mbti-badge">INFP</span> 추천 과목 가이드
+          </div>
+          <div id="cur-guide-text" class="card-content" style="margin-bottom: 12px;">
+            안심하세요! 1학년 때 한 번 정하면 변경이 어려운 선택과목, 대학 입학사정관이 눈여겨보는 필수 과목만 콕 집어드립니다.
+          </div>
+          <div class="card-title" style="font-size: 0.82rem; margin-top: 14px; margin-bottom: 6px; color: var(--text-main);">
+            추천 선택과목:
+          </div>
+          <div id="cur-subjects-container" class="subject-badge-container">
+            <!-- Subject items will render dynamically -->
+            <span class="subject-badge">미적분</span>
+            <span class="subject-badge">기하</span>
+            <span class="subject-badge">물리학Ⅰ</span>
+            <span class="subject-badge">화학Ⅰ</span>
+          </div>
+          <div id="cur-warning-text" class="warning-box">
+            주의: 해당 학과는 '확률과 통계'만 이수할 경우 서류 평가에서 불이익을 받을 수 있습니다.
+          </div>
+        </div>
+
+        <div class="glass-card">
+          <div class="card-title" style="color: var(--color-accent);">
+            <i class="fa-solid fa-calendar-check"></i> 📅 이번 달(학기 초) 우리 아이가 꼭 챙겨야 할 활동:
+          </div>
+          <div class="mission-list">
+            
+            <div class="mission-item">
+              <div class="mission-icon"><i class="fa-solid fa-users-rectangle"></i></div>
+              <div>
+                <span class="mission-category">교내 동아리 미션</span>
+                <span id="cur-club-mission" class="mission-text">교내 [수학·과학 탐구 동아리] 가입 신청하기</span>
+              </div>
+            </div>
+
+            <div class="mission-item">
+              <div class="mission-icon"><i class="fa-solid fa-hands-holding-child"></i></div>
+              <div>
+                <span class="mission-category">성향 맞춤 봉사 활동</span>
+                <span id="cur-service-mission" class="mission-text">지역 아동센터 스마트 기기 활용 교육 봉사 (주말 2시간)</span>
+              </div>
+            </div>
+
+            <div class="mission-item">
+              <div class="mission-icon"><i class="fa-solid fa-book-open"></i></div>
+              <div>
+                <span class="mission-category">세특 추천 도서</span>
+                <span id="cur-reading-mission" class="mission-text">추천 도서 세특 기록용독서: "AI 시대의 인간학" 탐독 후 독서록 제출 준비</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- UNIVERSAL INTERACTION LOAD SKELETON -->
+      <div id="loading-container" class="loading-container">
+        <div class="loading-spinner"></div>
+        <div id="loading-txt" class="loading-text">빅데이터(MBTI 및 사주 매칭 시트) 분석 중...</div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="db.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

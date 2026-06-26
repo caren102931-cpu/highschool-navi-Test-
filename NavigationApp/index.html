@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>고교학점제 네비게이션 - MBTI & 사주(일주) 융합 성향진단</title>
+  <meta name="description" content="우리 아이의 MBTI 테스트 결과와 사주 일주를 결합 분석하여 고교학점제 최적의 로드맵을 알려드립니다.">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="index.css">
+  <!-- Fonts & FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Premium Simulated Smartphone Shell Frame -->
+  <div class="phone-shell">
+    
+    <!-- Phone Status Header -->
+    <div class="phone-header">
+      <div class="time">11:00</div>
+      <div class="phone-notch"></div>
+      <div class="icons">
+        <i class="fas fa-signal"></i>
+        <i class="fas fa-wifi"></i>
+        <i class="fas fa-battery-full"></i>
+      </div>
+    </div>
+
+    <!-- App Main Dynamic Screens Area -->
+    <div class="screen-container">
+      
+      <!-- SCREEN 0-A: LOGIN SCREEN -->
+      <div id="login-screen" class="screen active">
+        <div class="logo-area">
+          <div class="logo-icon">
+            <i class="fa-solid fa-user-shield"></i>
+          </div>
+          <h1 class="app-title">고교학점제 네비게이션</h1>
+          <p class="sub-message">서비스 이용을 위해 로그인해 주세요.</p>
+        </div>
+
+        <div class="saju-form">
+          <div class="form-row">
+            <label class="form-label" for="login-email">이메일 주소 (아이디)</label>
+            <input type="email" id="login-email" class="form-input" placeholder="example@email.com">
+          </div>
+          <div class="form-row">
+            <label class="form-label" for="login-password">비밀번호(연락처)</label>
+            <input type="password" id="login-password" class="form-input" placeholder="가입 시 입력한 연락처 번호">
+          </div>
+        </div>
+
+        <button id="login-submit-btn" class="btn-primary" type="button">
+          <span>로그인</span>
+          <i class="fa-solid fa-right-to-bracket"></i>
+        </button>
+
+        <div id="go-register-btn" class="auth-switch-link">
+          아직 회원이 아니신가요? <span>회원가입하기</span>
+        </div>
+      </div>
+
+      <!-- SCREEN 0-B: REGISTER SCREEN (Simplified Registration) -->
+      <div id="register-screen" class="screen">
+        <div class="logo-area" style="margin-top: 5px; margin-bottom: 10px;">
+          <h1 class="app-title" style="font-size: 1.4rem;">학부모 간편 회원가입</h1>
+          <p class="sub-message" style="font-size: 0.78rem;">이름과 연락처만으로 즉시 가입을 완료하세요.</p>
+        </div>
+
+        <div class="saju-form" style="padding: 14px 16px; gap: 10px; margin-bottom: 10px;">
+          <div class="form-row">
+            <label class="form-label" for="reg-email">이메일 주소 (아이디로 사용)</label>
+            <input type="email" id="reg-email" class="form-input" placeholder="example@email.com">
+          </div>
+          
+          <div class="form-row">
+            <label class="form-label" for="reg-name">학부모 성함</label>
+            <input type="text" id="reg-name" class="form-input" placeholder="이름을 입력해 주세요">
+          </div>
+
+          <div class="form-row">
+            <label class="form-label" for="reg-password">연락처 (로그인 시 비밀번호 대용)</label>
+            <input type="tel" id="reg-password" class="form-input" placeholder="하이픈(-) 없이 입력 (예: 01012345678)">
+          </div>
+
+          <div class="form-row">
+            <label class="form-label">자녀 성별</label>
+            <div class="radio-group">
+              <div class="radio-btn">
+                <input type="radio" id="reg-gender-m" name="reg-gender" value="남자" checked>
+                <label for="reg-gender-m">남학생</label>
+              </div>
+              <div class="radio-btn">
+                <input type="radio" id="reg-gender-f" name="reg-gender" value="여자">
+                <label for="reg-gender-f">여학생</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <label class="form-label" for="reg-age">자녀 나이(세)</label>
+            <input type="number" id="reg-age" class="form-input" placeholder="예: 17" value="17">
+          </div>
+
+          <div class="form-row">
+            <label class="form-label" style="display:flex; gap:8px;">
+              <span>거주지 주소</span>
+              <span style="font-size:0.75rem; color:var(--text-muted); font-weight:400;">(시, 동 단위까지만 입력)</span>
+            </label>
+            <div style="display:flex; gap:8px;">
+              <input type="text" id="reg-addr-city" class="form-input" placeholder="예: 서울시" style="flex:1;">
+              <input type="text" id="reg-addr-dong" class="form-input" placeholder="예: 서초동" style="flex:1;">
+            </div>
+          </div>
+        </div>
+
+        <button id="register-submit-btn" class="btn-primary" type="button" style="padding: 14px;">
+          <span>회원가입 완료</span>
+          <i class="fa-solid fa-user-plus"></i>
+        </button>
+
+        <div id="go-login-btn" class="auth-switch-link" style="margin-top: 8px;">
+          이미 계정이 있으신가요? <span>로그인하러 가기</span>
+        </div>
+      </div>
+
+      <!-- SCREEN 1: HOME (TEST WELCOME SCREEN) -->
+      <div id="home-screen" class="screen">
+        <div class="logo-area">
+          <div class="logo-icon">
+            <i class="fa-solid fa-compass-drafting"></i>
+          </div>
+          <h1 class="app-title">고교학점제 네비게이션</h1>
+          <p class="sub-message">
+            우리 아이의 성향 진단 테스트와 사주 일주론을 매칭하여 대학 학과 목표와 상세한 월별 로드맵을 구축합니다.
+          </p>
+        </div>
+
+        <!-- Dynamic Welcome Banner -->
+        <div class="glass-card highlight" style="margin-bottom: 20px;">
+          <div class="card-title">
+            <i class="fa-solid fa-circle-user"></i> 환영합니다!
+          </div>
+          <div class="card-content" id="home-user-welcome" style="font-size: 0.85rem; line-height: 1.5;">
+            학부모님 반갑습니다. 정확한 분석을 진행하기 위해 먼저 자녀의 생년월일을 지정한 후 진단을 개시해 주세요.
+          </div>
+        </div>
+
+        <!-- Birth Entry Before Testing -->
+        <div class="saju-form" style="margin-bottom: 20px;">
+          <div class="form-title">
+            <i class="fa-solid fa-baby"></i> 자녀 생년월일 입력
+          </div>
+          <div class="form-row">
+            <label class="form-label" for="saju-birth">생년월일 8자리 (예: 20101125)</label>
+            <input type="number" id="saju-birth" class="form-input" placeholder="숫자만 입력 (예: 20110304)">
+          </div>
+        </div>
+
+        <button id="start-test-btn" class="btn-primary" type="button">
+          <span>자녀 성향 진단 테스트 시작</span>
+          <i class="fa-solid fa-play"></i>
+        </button>
+
+        <!-- Simulated Sheets Settings panel -->
+        <div class="settings-toggle">
+          <button id="settings-btn" class="settings-btn" type="button">
+            <i class="fa-solid fa-gears"></i> 구글 시트 API 연동 설정 (필수)
+          </button>
+          <div id="settings-panel" class="settings-panel">
+            <div class="settings-title">Spreadsheet Apps Script URL</div>
+            <input 
+              type="text" 
+              id="google-sheet-url" 
+              class="settings-input" 
+              placeholder="Apps Script 배포 웹앱 URL"
+              value="https://script.google.com/macros/s/AKfycby_mvBmRZSkoDn44OsvTmh-XyA5cdBsYQsb0ReAyANT-vSIFvA4dzMB_APG6zstZGC8/exec"
+            >
+            <p style="font-size: 0.7rem; color: var(--text-muted); line-height: 1.3;">
+              * 시트: 1atSIrIhx74hP17Fhxe9Ej-KP8BDQ2WgRCZWc6AMfAXk 연결 완료<br>
+              * 제공해주신 실시간 Apps Script Webapp 주소를 기본값으로 세팅했습니다.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SCREEN 1.5: INTERACTIVE MBTI TEST SCREEN -->
+      <div id="test-screen" class="screen">
+        <div class="test-header">
+          <button id="abort-test-btn" class="back-btn" aria-label="진단 중단"><i class="fa-solid fa-xmark"></i></button>
+          <div class="progress-indicator"><span id="curr-q-num">1</span> / 12</div>
+        </div>
+
+        <div class="progress-bar-container">
+          <div id="progress-fill" class="progress-bar-fill"></div>
+        </div>
+
+        <div class="question-card">
+          <div id="question-text" class="question-text">
+            질문 문항이 로딩되는 중입니다...
+          </div>
+        </div>
+
+        <div id="answer-options" class="answer-options">
+          <!-- Dynamic Answer Buttons Rendered Here -->
+        </div>
+      </div>
+
+      <!-- SCREEN 2: TENDENCY & SAJU INTEGRATED RESULTS (FREE AREA) -->
+      <div id="result-screen" class="screen">
+        <div class="screen-title-area">
+          <button id="back-to-home" class="back-btn" aria-label="처음으로"><i class="fa-solid fa-house"></i></button>
+          <div class="screen-title">🔍 자녀 융합 성향 리포트</div>
+        </div>
+
+        <!-- 1. Pure Saju Ilju Card -->
+        <div class="glass-card highlight">
+          <div class="card-title" style="color: var(--color-accent);">
+            <i class="fa-solid fa-moon"></i> 타고난 사주 (일주 성향 분석)
+          </div>
+          <div class="ilju-profile">
+            <div id="res-ilju-avatar" class="ilju-animal-avatar">🐏</div>
+            <div class="ilju-summary-meta">
+              <span id="res-ilju-name" class="ilju-name" style="font-size: 1.15rem; font-weight:800;">정미 일주</span>
+            </div>
+          </div>
+          
+          <div style="margin-top: 10px; border-top: 1px dashed var(--border-glass); padding-top: 10px;">
+            <div style="font-size: 0.8rem; font-weight:700; color: var(--color-secondary); margin-bottom: 4px;">☯️ 타고난 일주 기질:</div>
+            <div id="res-ilju-char" class="card-content" style="font-size: 0.82rem; margin-bottom:12px;"></div>
+            
+            <div style="font-size: 0.8rem; font-weight:700; color: var(--color-secondary); margin-bottom: 4px;">✍️ 학습 효율 극대화법:</div>
+            <div id="res-ilju-study" class="card-content" style="font-size: 0.82rem; line-height: 1.5; color: var(--text-main);"></div>
+          </div>
+        </div>
+
+        <!-- 2. Pure MBTI Card -->
+        <div class="glass-card">
+          <div class="card-title">
+            <i class="fa-solid fa-dna"></i> 성향 테스트 (MBTI 성향 분석)
+          </div>
+          <div class="card-content">
+            테스트로 판정된 자녀의 유형은 <strong id="res-mbti-type" style="color: var(--color-secondary); font-size:1.15rem;">INFP</strong> 입니다.
+          </div>
+          
+          <div style="margin-top: 10px; border-top: 1px dashed var(--border-glass); padding-top: 10px;">
+            <div style="font-size: 0.8rem; font-weight:700; color: var(--color-secondary); margin-bottom: 4px;">🧠 성품과 성향 특징:</div>
+            <div id="res-mbti-char" class="card-content" style="font-size: 0.82rem; margin-bottom:12px; line-height:1.5;"></div>
+            
+            <div style="font-size: 0.8rem; font-weight:700; color: var(--color-secondary); margin-bottom: 4px;">💼 만족도가 높은 업무 환경:</div>
+            <div id="res-mbti-style" class="card-content" style="font-size: 0.82rem; line-height: 1.5; color: var(--text-main);"></div>
+          </div>
+        </div>
+
+        <!-- 3. Recommend Jobs Card -->
+        <div class="glass-card">
+          <div class="card-title">
+            <i class="fa-solid fa-lightbulb"></i> 추천성공 취업군 (Daymaster 매칭)
+          </div>
+          <div id="res-jobs-container" class="badge-container">
+            <!-- Dynamic Job Badges will appear here -->
+          </div>
+        </div>
+
+        <!-- Premium Conversion Button / Banner Card -->
+        <button id="premium-pay-btn" class="premium-banner" type="button">
+          <div class="banner-header">
+            <i class="fa-solid fa-lock"></i>
+            <span>유료 프리미엄 멤버십 오픈</span>
+          </div>
+          <div class="banner-desc">
+            🔒 [유료] 우리 아이 성적 기반 고2 개정 5등급제 맞춤 대학 진학진단 & 월별 비교과 로드맵 보러가기 (월 9,900원)
+          </div>
+        </button>
+      </div>
+
+      <!-- SCREEN 3: CURATION STRATEGY REPORT (PREMIUM AREA) -->
+      <div id="membership-screen" class="screen">
+        <div class="screen-title-area">
+          <button id="back-to-result" class="back-btn" aria-label="이전 화면으로"><i class="fa-solid fa-chevron-left"></i></button>
+          <div class="screen-title">🎯 매월 융합전략 Curation</div>
+        </div>
+
+        <!-- Grade Input Form within Premium Screen -->
+        <div class="glass-card highlight" id="grade-input-container">
+          <div class="card-title">
+            <i class="fa-solid fa-calculator"></i> 학업 성적 개별 진단 (고2 개정 5등급제 예상안 적용)
+          </div>
+          <div class="saju-form" style="background: transparent; border: none; padding: 0; margin: 0; gap: 8px;">
+            <div class="form-row">
+              <label class="form-label" for="grade-gpa">고1 1학기 중간고사 평균 등급 (5등급제 기준, 예: 1.8)</label>
+              <input type="number" step="0.1" id="grade-gpa" class="form-input" placeholder="5등급 예상 1학기 첫 내신 (예: 2.0)">
+            </div>
+            <div class="form-row">
+              <label class="form-label" for="grade-mock">3월 전국 모의고사 등급 합 (국/수/영/탐 등급의 합, 예: 8)</label>
+              <input type="number" id="grade-mock" class="form-input" placeholder="모의고사 등급 합 입력 (예: 6)">
+            </div>
+            <button id="calc-college-btn" class="btn-primary" style="padding: 12px; margin-top: 10px;" type="button">
+              <span>기질 & 성적 융합 타깃 대학교 추천받기</span>
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Recommended University Cards Area -->
+        <div class="glass-card" id="recommended-college-panel" style="display: none;">
+          <div class="card-title" style="color: var(--color-secondary);">
+            <i class="fa-solid fa-building-columns"></i> 기질 맞춤형 추천 대학 & 학과
+          </div>
+          <p style="font-size: 0.74rem; color: var(--text-muted); margin-bottom: 10px;">* 자녀의 사주(일주) 끈기와 MBTI 분석, 그리고 고2 5등급제 합격 컷을 결합하여 가치가 높은 적정 대학교 라인업을 제공합니다.</p>
+          <div id="college-list-container" style="display: flex; flex-direction: column; gap: 10px;">
+            <!-- Recommended list cards dynamically added here -->
+          </div>
+        </div>
+
+        <!-- Dynamic Extracurricular/Mission Area (Shows AFTER selecting a college card) -->
+        <div class="glass-card" id="curation-mission-panel" style="display: none;">
+          <div class="card-title" style="color: var(--color-accent); font-size:0.92rem; margin-bottom:14px;">
+            <i class="fa-solid fa-compass"></i> <span id="selected-cur-title">간호학과</span> 연간 준비 로드맵
+          </div>
+          
+          <!-- High School Elective Courses Guide -->
+          <div style="margin-bottom: 16px; border-bottom: 1px dashed var(--border-glass); padding-bottom: 14px;">
+            <div class="form-label" style="margin-bottom: 8px; color: var(--color-secondary); font-weight:700;">📘 고교학점제 필수 이수 선택과목 추천</div>
+            <div id="cur-electives-container" style="display:flex; flex-wrap:wrap; gap:8px;">
+              <!-- Dynamic Electives Badges -->
+            </div>
+          </div>
+
+          <!-- Monthly subscription timeline (3월~12월) -->
+          <div style="margin-bottom: 16px;">
+            <div class="form-label" style="margin-bottom: 8px; color: var(--color-accent); font-weight:700;">📅 [구독 서비스] 매월 상세 진로/비교과 액션 아이템</div>
+            <div id="monthly-timeline-container" style="display: flex; flex-direction: column; gap: 12px; margin-top:10px;">
+              <!-- Dynamic Monthly timeline steps -->
+            </div>
+          </div>
+
+          <div class="mission-list" style="border-top: 1px dashed var(--border-glass); padding-top: 14px; margin-top: 14px;">
+            <div class="card-title" style="font-size:0.8rem; color:var(--text-main);"><i class="fa-solid fa-check-double"></i> 종합 3대 연간 핵심 미션 요약</div>
+            <div class="mission-item">
+              <div class="mission-icon"><i class="fa-solid fa-users-rectangle"></i></div>
+              <div>
+                <span class="mission-category">추천 동아리</span>
+                <span id="cur-club-mission" class="mission-text">교내 동아리 가입 신청하기</span>
+              </div>
+            </div>
+
+            <div class="mission-item">
+              <div class="mission-icon"><i class="fa-solid fa-hands-holding-child"></i></div>
+              <div>
+                <span class="mission-category">성향 봉사</span>
+                <span id="cur-service-mission" class="mission-text">지역 아동센터 스마트 기기 활용 교육 봉사</span>
+              </div>
+            </div>
+
+            <div class="mission-item">
+              <div class="mission-icon"><i class="fa-solid fa-book-open"></i></div>
+              <div>
+                <span class="mission-category">세특 독서</span>
+                <span id="cur-reading-mission" class="mission-text">AI 시대의 인간학 독서록 제출</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- UNIVERSAL INTERACTION LOAD SKELETON -->
+      <div id="loading-container" class="loading-container">
+        <div class="loading-spinner"></div>
+        <div id="loading-txt" class="loading-text">빅데이터(MBTI 및 사주 매칭 시트) 분석 중...</div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="manseryeok.js"></script>
+  <script src="db.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
